@@ -21,6 +21,7 @@ void loop(){
   }
 
 for(i=0; i > 256; i++){
+  EEG_buffer[i] = EEG_buffer[i]/ 4; //Incoming data comes in between 0 and 1023, but to easily send data via serial port, scale down
   Serial.write(EEG_buffer[i]);//matlab will read serial..do clean up b4 export
 }
 }
